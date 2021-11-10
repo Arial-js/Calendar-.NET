@@ -65,40 +65,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event.cs" />
-    <Compile Include="FrmCreateEvent.cs">
+    <Compile Include="Classes\Event.cs" />
+    <Compile Include="Form\FrmCreateEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCreateEvent.Designer.cs">
+    <Compile Include="Form\FrmCreateEvent.Designer.cs">
       <DependentUpon>FrmCreateEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCalendar.cs">
+    <Compile Include="Form\FrmCalendar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCalendar.Designer.cs">
+    <Compile Include="Form\FrmCalendar.Designer.cs">
       <DependentUpon>FrmCalendar.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlobalInfo.cs" />
+    <Compile Include="Form\FrmSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmSummary.Designer.cs">
+      <DependentUpon>FrmSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\GlobalInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControlBlank.cs">
+    <Compile Include="UserControl\UserControlBlank.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlBlank.Designer.cs">
+    <Compile Include="UserControl\UserControlBlank.Designer.cs">
       <DependentUpon>UserControlBlank.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlDays.cs">
+    <Compile Include="UserControl\UserControlDays.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlDays.Designer.cs">
+    <Compile Include="UserControl\UserControlDays.Designer.cs">
       <DependentUpon>UserControlDays.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataManagement.cs" />
-    <EmbeddedResource Include="FrmCalendar.resx">
+    <Compile Include="Classes\DataManagement.cs" />
+    <Compile Include="UserControl\UserControlMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlMonth.Designer.cs">
+      <DependentUpon>UserControlMonth.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\FrmCalendar.resx">
       <DependentUpon>FrmCalendar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCreateEvent.resx">
+    <EmbeddedResource Include="Form\FrmCreateEvent.resx">
       <DependentUpon>FrmCreateEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmSummary.resx">
+      <DependentUpon>FrmSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,11 +124,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControlBlank.resx">
+    <EmbeddedResource Include="UserControl\UserControlBlank.resx">
       <DependentUpon>UserControlBlank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDays.resx">
+    <EmbeddedResource Include="UserControl\UserControlDays.resx">
       <DependentUpon>UserControlDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlMonth.resx">
+      <DependentUpon>UserControlMonth.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

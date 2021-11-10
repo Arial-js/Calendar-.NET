@@ -9,6 +9,7 @@ namespace Calendar.Utility
 {
     class DataManagement
     {
+        // this method open the connection on Sqlite
         public void OpenConnection()
         {
             GlobalInfo.SQLiteConnection = new SQLiteConnection("Data Source=Calendar_Database;Version=3;");
@@ -18,11 +19,13 @@ namespace Calendar.Utility
             command.ExecuteNonQuery();
         }
 
+        // this method close the connection on Sqlite
         public void CloseConnection()
         {
             GlobalInfo.SQLiteConnection.Close();
         }
 
+        // this method is an insert on Events Table 
         public void CreateEvent(string name, float start, float end, string date, int iterable)
         {
             SQLiteCommand command = new SQLiteCommand();
@@ -33,6 +36,7 @@ namespace Calendar.Utility
             command.ExecuteNonQuery();
         }
 
+        // this method select from Events when Date is a param
         public List<string> ShowEvent(string date) 
         {
             List<string> events = new List<string>();

@@ -158,6 +158,7 @@ namespace Calendar
             this.LblMonthYear.TabIndex = 10;
             this.LblMonthYear.Text = "Mese Anno";
             this.LblMonthYear.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LblMonthYear.Click += new System.EventHandler(this.LblMonthYear_Click);
             // 
             // FrmCalendar
             // 

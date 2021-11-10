@@ -19,11 +19,13 @@ namespace Calendar
             InitializeComponent();
         }
 
+        // in this load I set the TxtDate with the current date that you clicked
         private void FrmCreateEvent_Load(object sender, EventArgs e)
         {
             TxtDate.Text = UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year;
         }
 
+        // this method save the events in the date that you clicked and if he's iterable in the format d/m/yyyy
         private void BtnSaveEvent_Click(object sender, EventArgs e)
         {
             try
@@ -54,7 +56,7 @@ namespace Calendar
                     {
                         dataManagement.CreateEvent(TxtEvent.Text, float.Parse(TxtStart.Text), float.Parse(TxtEnd.Text), TxtDate.Text, check);
                         DateTime dateTime = new DateTime();
-                        TxtDate.Text = dateTime.AddDays(double.Parse(UserControlDays.static_day.ToString())-1).AddMonths(FrmCalendar.static_month - 1).AddYears(FrmCalendar.static_year ++).ToString("d/MM/yyyy");
+                        TxtDate.Text = dateTime.AddDays(double.Parse(UserControlDays.static_day.ToString())-1).AddMonths(FrmCalendar.static_month - 1).AddYears(FrmCalendar.static_year ++).ToString("d/M/yyyy");
                     }
                     MessageBox.Show("Nuovo Evento Creato!");
                     dataManagement.CloseConnection();
