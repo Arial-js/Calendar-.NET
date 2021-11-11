@@ -36,6 +36,7 @@ namespace Calendar
             {
                 UserControlMonth userControlMonth = new UserControlMonth();
                 userControlMonth.Month(i);
+                userControlMonth.Year(int.Parse(LblYear.Text));
                 FlMonthContainer.Controls.Add(userControlMonth);
             }
         }
@@ -52,6 +53,7 @@ namespace Calendar
             {
                 UserControlMonth userControlMonth = new UserControlMonth();
                 userControlMonth.Month(i);
+                userControlMonth.Year(int.Parse(LblYear.Text));
                 FlMonthContainer.Controls.Add(userControlMonth);
             }
         }
@@ -68,6 +70,7 @@ namespace Calendar
             {
                 UserControlMonth userControlMonth = new UserControlMonth();
                 userControlMonth.Month(i);
+                userControlMonth.Year(int.Parse(LblYear.Text));
                 FlMonthContainer.Controls.Add(userControlMonth);
             }
         }

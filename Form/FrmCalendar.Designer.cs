@@ -45,7 +45,8 @@ namespace Calendar
             // 
             // FlDayContainer
             // 
-            this.FlDayContainer.BackColor = System.Drawing.Color.DarkGray;
+            this.FlDayContainer.AutoScroll = true;
+            this.FlDayContainer.BackColor = System.Drawing.Color.Transparent;
             this.FlDayContainer.Location = new System.Drawing.Point(12, 95);
             this.FlDayContainer.Name = "FlDayContainer";
             this.FlDayContainer.Size = new System.Drawing.Size(1012, 554);
@@ -150,11 +151,12 @@ namespace Calendar
             // 
             // LblMonthYear
             // 
-            this.LblMonthYear.BackColor = System.Drawing.Color.DarkGray;
-            this.LblMonthYear.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMonthYear.Location = new System.Drawing.Point(362, 9);
+            this.LblMonthYear.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.LblMonthYear.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMonthYear.ForeColor = System.Drawing.Color.Crimson;
+            this.LblMonthYear.Location = new System.Drawing.Point(1, 2);
             this.LblMonthYear.Name = "LblMonthYear";
-            this.LblMonthYear.Size = new System.Drawing.Size(307, 27);
+            this.LblMonthYear.Size = new System.Drawing.Size(1033, 35);
             this.LblMonthYear.TabIndex = 10;
             this.LblMonthYear.Text = "Mese Anno";
             this.LblMonthYear.TextAlign = System.Drawing.ContentAlignment.TopCenter;

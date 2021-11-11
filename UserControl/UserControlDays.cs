@@ -43,5 +43,16 @@ namespace Calendar
             frmCreateEvent.ShowDialog();
             dataManagement.CloseConnection();
         }
+
+        private void LstBox_Click(object sender, EventArgs e)
+        {
+            static_day = LblDays.Text;
+            DataManagement dataManagement = new DataManagement();
+            dataManagement.OpenConnection();
+            LstBox.DataSource = dataManagement.ShowEvent(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+            FrmCreateEvent frmCreateEvent = new FrmCreateEvent();
+            frmCreateEvent.ShowDialog();
+            dataManagement.CloseConnection();
+        }
     }
 }

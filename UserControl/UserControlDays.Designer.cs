@@ -58,9 +58,7 @@ namespace Calendar
             this.LstBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.LstBox.Size = new System.Drawing.Size(135, 60);
             this.LstBox.TabIndex = 2;
-            // 
-            // TmrUCD
-            // 
+            this.LstBox.Click += new System.EventHandler(this.LstBox_Click);
             // 
             // UserControlDays
             // 

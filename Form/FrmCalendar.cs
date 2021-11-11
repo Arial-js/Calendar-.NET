@@ -14,6 +14,7 @@ namespace Calendar
     public partial class FrmCalendar : Form
     {
         private int month, year;
+
         public static int static_month, static_year; // see DisplayDays() method
         public FrmCalendar()
         {
@@ -22,48 +23,36 @@ namespace Calendar
 
         private void FrmCalendar_Load(object sender, EventArgs e)
         {
-            //TODO sistemare il fatto che quando faccio il load dal Summary si loada sia il displaydays(param param) che questo sotto.
-            DisplayDays();
+            DisplayDays(month, year);
         }
-        // this funcion display the calendar.
-        private void DisplayDays()
+
+        /* This is the method public that allows to show calendar on current month and year
+         * @param {monthNameText} set to 0 by default
+         * @Param {yearName} set to 0 by default
+         * @Return VOID
+         * See more for Optional Param here https://www.c-sharpcorner.com/article/make-parameter-optional-in-c-sharp/
+         */
+        public void DisplayDays(int monthNameText = 0, int yearName = 0)
         {
-            DateTime now = DateTime.Now;
-            month = now.Month;
-            year = now.Year;
-            // name of the month and year
-            String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            LblMonthYear.Text = monthName + " " + year;
-
-            static_month = month; // here you set the static month to the actual month
-            static_year = year;   // here you set the static year to the actual year
-
-            DateTime startOfMonth = new DateTime(year, month, 1);
-            int days = DateTime.DaysInMonth(year, month);
-            int daysOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
-
-            for(int i=1; i< daysOfTheWeek; ++i)
+            if(monthNameText == 0 || yearName == 0)
             {
-                UserControlBlank userControlBlank = new UserControlBlank();
-                FlDayContainer.Controls.Add(userControlBlank);
-            }
+                DateTime now = DateTime.Now;
+                month = now.Month;
+                year = now.Year;
 
-            for(int i = 1; i<= days; ++i)
+                // name of the month and year
+                String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+                LblMonthYear.Text = monthName + " " + year;
+            }
+            else
             {
-                UserControlDays userControlDays = new UserControlDays();
-                userControlDays.Days(i);
-                FlDayContainer.Controls.Add(userControlDays);
-            }
+                month = monthNameText;
+                year = yearName;
 
-        }
-        // this is the method public that allow to show calendar on current month and year when click Summary -> see FrmSummary.cs
-        public void DisplayDays(int monthNameText, int yearName)
-        {
-            month = monthNameText;
-            year = yearName;
-            // name of the month and year
-            String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(monthNameText);
-            LblMonthYear.Text = monthName + " " + yearName;
+                // name of the month and year
+                String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(monthNameText);
+                LblMonthYear.Text = monthName + " " + yearName;
+            }
 
             static_month = month;
             static_year = year;
@@ -84,7 +73,6 @@ namespace Calendar
                 userControlDays.Days(i);
                 FlDayContainer.Controls.Add(userControlDays);
             }
-
             this.Show();
         }
 
@@ -167,3 +155,36 @@ namespace Calendar
         }
     }
 }
+
+
+// this funcion display the calendar's days and month.
+/*private void DisplayDays()
+{
+    DateTime now = DateTime.Now;
+    month = now.Month;
+    year = now.Year;
+    // name of the month and year
+    String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+    LblMonthYear.Text = monthName + " " + year;
+
+    static_month = month; // here you set the static month to the actual month
+    static_year = year;   // here you set the static year to the actual year
+
+    DateTime startOfMonth = new DateTime(year, month, 1);
+    int days = DateTime.DaysInMonth(year, month);
+    int daysOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
+
+    for(int i=1; i< daysOfTheWeek; ++i)
+    {
+        UserControlBlank userControlBlank = new UserControlBlank();
+        FlDayContainer.Controls.Add(userControlBlank);
+    }
+
+    for(int i = 1; i<= days; ++i)
+    {
+        UserControlDays userControlDays = new UserControlDays();
+        userControlDays.Days(i);
+        FlDayContainer.Controls.Add(userControlDays);
+    }
+
+}*/

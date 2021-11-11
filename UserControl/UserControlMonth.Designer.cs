@@ -31,6 +31,7 @@ namespace Calendar
         {
             this.LblMonth = new System.Windows.Forms.Label();
             this.LblMonthNumber = new System.Windows.Forms.Label();
+            this.LblYear = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LblMonth
@@ -41,6 +42,7 @@ namespace Calendar
             this.LblMonth.Size = new System.Drawing.Size(182, 31);
             this.LblMonth.TabIndex = 2;
             this.LblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LblMonth.Click += new System.EventHandler(this.LblMonth_Click);
             // 
             // LblMonthNumber
             // 
@@ -53,11 +55,22 @@ namespace Calendar
             this.LblMonthNumber.Text = "0";
             this.LblMonthNumber.Visible = false;
             // 
+            // LblYear
+            // 
+            this.LblYear.AutoSize = true;
+            this.LblYear.Location = new System.Drawing.Point(78, 13);
+            this.LblYear.Name = "LblYear";
+            this.LblYear.Size = new System.Drawing.Size(27, 13);
+            this.LblYear.TabIndex = 4;
+            this.LblYear.Text = "year";
+            this.LblYear.Visible = false;
+            // 
             // UserControlMonth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.LblYear);
             this.Controls.Add(this.LblMonthNumber);
             this.Controls.Add(this.LblMonth);
             this.Name = "UserControlMonth";
@@ -72,5 +85,6 @@ namespace Calendar
 
         private System.Windows.Forms.Label LblMonth;
         private System.Windows.Forms.Label LblMonthNumber;
+        private System.Windows.Forms.Label LblYear;
     }
 }
