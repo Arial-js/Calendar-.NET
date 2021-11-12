@@ -15,7 +15,7 @@ namespace Calendar
     {
         private int month, year;
 
-        public static int static_month, static_year; // see DisplayDays() method
+        public static int static_month, static_year; // they are your month and year getters/setters
         public FrmCalendar()
         {
             InitializeComponent();

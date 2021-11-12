@@ -13,7 +13,7 @@ namespace Calendar
 {
     public partial class UserControlDays : UserControl
     {
-        public static string static_day;
+        public static string static_day; // this is your get/set for the days remember static_day = LblDays.Text in all method
         public UserControlDays()
         {
             InitializeComponent(); 
@@ -35,6 +35,28 @@ namespace Calendar
 
         private void UserControlDays_Click(object sender, EventArgs e)
         {
+            /*static_day = LblDays.Text;
+            DataManagement dataManagement = new DataManagement();
+            dataManagement.OpenConnection();
+            LstBox.DataSource = dataManagement.ShowEvent(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+            FrmCreateEvent frmCreateEvent = new FrmCreateEvent();
+            frmCreateEvent.ShowDialog();
+            dataManagement.CloseConnection();*/
+        }
+
+        private void LstBox_Click(object sender, EventArgs e)
+        {
+            /*static_day = LblDays.Text;
+            DataManagement dataManagement = new DataManagement();
+            dataManagement.OpenConnection();
+            LstBox.DataSource = dataManagement.ShowEvent(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+            FrmCreateEvent frmCreateEvent = new FrmCreateEvent();
+            frmCreateEvent.ShowDialog();
+            dataManagement.CloseConnection();*/
+        }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
             static_day = LblDays.Text;
             DataManagement dataManagement = new DataManagement();
             dataManagement.OpenConnection();
@@ -44,15 +66,11 @@ namespace Calendar
             dataManagement.CloseConnection();
         }
 
-        private void LstBox_Click(object sender, EventArgs e)
+        private void BtnListEvent_Click(object sender, EventArgs e)
         {
             static_day = LblDays.Text;
-            DataManagement dataManagement = new DataManagement();
-            dataManagement.OpenConnection();
-            LstBox.DataSource = dataManagement.ShowEvent(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
-            FrmCreateEvent frmCreateEvent = new FrmCreateEvent();
-            frmCreateEvent.ShowDialog();
-            dataManagement.CloseConnection();
+            FrmListEvents frmListEvents = new FrmListEvents();           
+            frmListEvents.ShowDialog();
         }
     }
 }

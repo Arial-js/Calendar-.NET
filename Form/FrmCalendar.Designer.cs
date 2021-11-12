@@ -54,28 +54,39 @@ namespace Calendar
             // 
             // BtnPrevious
             // 
-            this.BtnPrevious.Location = new System.Drawing.Point(852, 655);
+            this.BtnPrevious.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnPrevious.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrevious.Image")));
+            this.BtnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPrevious.Location = new System.Drawing.Point(842, 655);
             this.BtnPrevious.Name = "BtnPrevious";
-            this.BtnPrevious.Size = new System.Drawing.Size(75, 26);
+            this.BtnPrevious.Size = new System.Drawing.Size(88, 24);
             this.BtnPrevious.TabIndex = 1;
             this.BtnPrevious.Text = "Indietro";
-            this.BtnPrevious.UseVisualStyleBackColor = true;
+            this.BtnPrevious.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnPrevious.UseVisualStyleBackColor = false;
             this.BtnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
             // 
             // BtnNext
             // 
-            this.BtnNext.Location = new System.Drawing.Point(949, 655);
+            this.BtnNext.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BtnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnNext.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNext.Image = ((System.Drawing.Image)(resources.GetObject("BtnNext.Image")));
+            this.BtnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnNext.Location = new System.Drawing.Point(936, 655);
             this.BtnNext.Name = "BtnNext";
-            this.BtnNext.Size = new System.Drawing.Size(75, 26);
+            this.BtnNext.Size = new System.Drawing.Size(88, 24);
             this.BtnNext.TabIndex = 2;
             this.BtnNext.Text = "Avanti";
-            this.BtnNext.UseVisualStyleBackColor = true;
+            this.BtnNext.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnNext.UseVisualStyleBackColor = false;
             this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // LblMonday
             // 
             this.LblMonday.AutoSize = true;
-            this.LblMonday.BackColor = System.Drawing.Color.DarkGray;
+            this.LblMonday.BackColor = System.Drawing.Color.Transparent;
             this.LblMonday.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMonday.Location = new System.Drawing.Point(57, 55);
             this.LblMonday.Name = "LblMonday";
@@ -86,7 +97,7 @@ namespace Calendar
             // LblTuesday
             // 
             this.LblTuesday.AutoSize = true;
-            this.LblTuesday.BackColor = System.Drawing.Color.DarkGray;
+            this.LblTuesday.BackColor = System.Drawing.Color.Transparent;
             this.LblTuesday.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTuesday.Location = new System.Drawing.Point(202, 55);
             this.LblTuesday.Name = "LblTuesday";
@@ -97,7 +108,7 @@ namespace Calendar
             // LblWednesday
             // 
             this.LblWednesday.AutoSize = true;
-            this.LblWednesday.BackColor = System.Drawing.Color.DarkGray;
+            this.LblWednesday.BackColor = System.Drawing.Color.Transparent;
             this.LblWednesday.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblWednesday.Location = new System.Drawing.Point(337, 55);
             this.LblWednesday.Name = "LblWednesday";
@@ -108,7 +119,7 @@ namespace Calendar
             // LblThursday
             // 
             this.LblThursday.AutoSize = true;
-            this.LblThursday.BackColor = System.Drawing.Color.DarkGray;
+            this.LblThursday.BackColor = System.Drawing.Color.Transparent;
             this.LblThursday.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblThursday.Location = new System.Drawing.Point(485, 55);
             this.LblThursday.Name = "LblThursday";
@@ -119,7 +130,7 @@ namespace Calendar
             // LblFriday
             // 
             this.LblFriday.AutoSize = true;
-            this.LblFriday.BackColor = System.Drawing.Color.DarkGray;
+            this.LblFriday.BackColor = System.Drawing.Color.Transparent;
             this.LblFriday.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFriday.Location = new System.Drawing.Point(627, 55);
             this.LblFriday.Name = "LblFriday";
@@ -130,7 +141,7 @@ namespace Calendar
             // LblSaturday
             // 
             this.LblSaturday.AutoSize = true;
-            this.LblSaturday.BackColor = System.Drawing.Color.DarkGray;
+            this.LblSaturday.BackColor = System.Drawing.Color.Transparent;
             this.LblSaturday.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblSaturday.Location = new System.Drawing.Point(774, 55);
             this.LblSaturday.Name = "LblSaturday";
@@ -141,7 +152,7 @@ namespace Calendar
             // LblSunday
             // 
             this.LblSunday.AutoSize = true;
-            this.LblSunday.BackColor = System.Drawing.Color.DarkGray;
+            this.LblSunday.BackColor = System.Drawing.Color.Transparent;
             this.LblSunday.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblSunday.Location = new System.Drawing.Point(909, 55);
             this.LblSunday.Name = "LblSunday";
@@ -154,9 +165,11 @@ namespace Calendar
             this.LblMonthYear.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.LblMonthYear.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMonthYear.ForeColor = System.Drawing.Color.Crimson;
-            this.LblMonthYear.Location = new System.Drawing.Point(1, 2);
+            this.LblMonthYear.Image = ((System.Drawing.Image)(resources.GetObject("LblMonthYear.Image")));
+            this.LblMonthYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblMonthYear.Location = new System.Drawing.Point(0, -1);
             this.LblMonthYear.Name = "LblMonthYear";
-            this.LblMonthYear.Size = new System.Drawing.Size(1033, 35);
+            this.LblMonthYear.Size = new System.Drawing.Size(1034, 35);
             this.LblMonthYear.TabIndex = 10;
             this.LblMonthYear.Text = "Mese Anno";
             this.LblMonthYear.TextAlign = System.Drawing.ContentAlignment.TopCenter;

@@ -117,7 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TmrUCD.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnCreate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOaSURBVEhLtZR7
+        bEtRHMfb297u9j5629tbfaiujOk8NlmGBZvXxiJkJtkI9od5M28SESKGZOa5EK+SiHkPwZYIEcRjnrNY
+        Y4SNECIY1nZrlbU/5/Yh27p5zjf55pzknN/ne8/jHtFfCgu2/0W8gox4xtLEEdRv9yCeQfAN84d7hvc1
+        17d3iB++eVGq51XpfIg2cRAXrXW3VwjP0hE1Wxalfg3Bi/LSofLoDMCl2Fc0HhmY9mfSIk/EMGwZSxEv
+        WsIfF88GXil3SiSS0YHpv68EtYq9pVFz9rTkAQ0YJoZtS9KgPeBiBU2vMXTQOM5ZC33v712GOEuXVuE6
+        XuGlSbIS1ZCB0l9LrFQwRUn94h2Oyhvw4f4V6BMT1So80qCGEmshLMyZ/EXFMg9RLRFA/EQqVrEzZWCi
+        0/Pkrh8e272zty146b5CgJoKv3My091oO3cFMW1KHCHDPU7bTagtvwqWLkZX6ECjjByYDRwcXZ8RBhdc
+        bysDPdpSxIgPoNoQWkF5xshhDSa9pglcDWsWzILTuzaDSkHDusVzm8FDPrGjwMexijsI0xs5ERkXmC0l
+        l0mlr8cOtvy4imolBRUlx/yQ+2ePQCe9Dq4d2x8W4Kt+AD27RTlojrebYhM+yuRkPc1prmM4vhBxNQG8
+        SNRHxfEOrU7v0vO0T9jzrYtHQNfIjo1vyi42C7l35nBYyIRx6c5JG/dC4fMG2FRVC3MOlkBS9kw3QTHP
+        /XSSpE9OnpLr3bj9EOh0BtfyKYO+adX0l9zs8WCJMkMoxHa+GKounA4L0Gh1rryyZ/6AkPMfvgUZRdkF
+        vk5O0s7t1lOwFn1FQv8kNyYWN8Z07WwXiqdmZXjNRoP77e1LYWDBNVdLQGM0uZrCBU/bcxwYjj8vIggi
+        39Ij9luP3vFOOUl9lMmIFSiUR3fcZu6od7A09RKdTwH6qx2tBexet8I3cNL0sIClZ67V4jieKJJIpB8o
+        mnmEoFnIUmFJQQn9GGQZMsYyTNX+/NXelgEpQ5Pt063FzeCC5xSVlgoQQfpg+ysZGYp8sTJ3mke4/1Bd
+        4Wl8Wg4Mq/QU2N6FBcSlpR8K1v2ROE6pOICeFef40SPtsydmfjL1inO2hOfdqobsrVZh9X8t4SkfJxGL
+        zw3JmRe2/7GpY+rQ+Bj/zH9ULxlJ1cUkp3zOzNvmW3WlErY8rQOCYevRmCow5d9FIY9C0N0kq3qFRxBu
+        ilMfCAz9HzV5i0Si784SiYkbdEBhAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnListEvent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAO0SURBVEhLvZXr
+        T1t1HMaJ0Xe+8KXxH5jGF2rQeVky0dJulkthZS3tAbrN0Ru0a6Etva073RJaGlcgNAwoQcNVaskoFpjK
+        tnb1wliHzIUVBWTZ5GKYi/qGxNQ99pycwsAzV3yxJ3lyvjnJeT7nd77n9/1lPXG9lKvKfTlH/TxVv8hR
+        5r+ao3uOrt9XSLJI8imq3sNREtQ1Y+XkkE/nq9xni9TuibeEhvi7UtsY7wj56d6i2u/fKzsZoursAn3i
+        wFFykK7z9T9SV8r7CesxJubRKpTXt3gGRhFdXIalNZjsiUz/PbVyH3pvXzI4OfuAqo87OpJf3bqDq8u/
+        QWY9l4zML9P1ma7wH/uERj4Txa5ijWfK1TuCsRuL2C+2BvMq6+Oh6z/hnRKT/1CV50ZfdObBXkGNW2Jo
+        nu0Y/XYjtRpzhaV1gQJTz3DKHfVMFLsogLvvc0SXVqBwdi46/aG12NIaPnR0zLu6R9cvz/+C8jrffGPg
+        4v0vZm+jwuJLtIZif6YB3HLy8QDlmXZQy6Ye2o13BRj/YRG6pnaoGprwZepN2QJ3OmOAoakXMrIBteFc
+        qLr5kNoddMCpjhBqvf2sPjcSyxwQmJyG5KQdh06XQHq2CKWOGlbA+am5/7cCCuANjkHkqEaZqxL2zu5t
+        QY/yrgDf3V2nGz0xd5c1jM27AvREruGw2QyRzYC28Qhr4E7vBLwiNIheJyy67Gz5M8yth3pgc0DzGQ+l
+        nmKIbUY6INMm7+FWv1DMV10sFmjuCQcHkm9UWN1M/BaAsDtxrD0fJ4I8iKzsALYmv8nXxnWCqqWgRLOh
+        4CvXDkiN97JlFicTvwUYjidoiDT1N/VGp7YFsXkicQdarQcBqXbDVKT+1Vcg/91+sHLlIFfenJ68tB5u
+        MjWDhq7eYg1MmxpyF65MY9XVhCFZDaoK1Ov9ecf/EvIUM29/oHyNid1SGkB2DUDqOoqKRgK1LX46bPja
+        HALf3Nx076XrqK52I5wKtpWZ4C/RwpKnXOPlKjzU2Gcit2uzyalPQzQKkGcSpzaangac8PRQw23TnNI6
+        qKRGmIg69AmUkB1xgEM4PmKi2JUGqBuaIe8qhH6Yi/JTp2lA54VJ+M5foa11fwKVygyJzAiDxAiXbxDh
+        mYXM90Hs9iqcHwdgaetGZGFl85unPRKfQ8vQJfjHJzF+82f6XkYbrVDp6m8biyC2tPqv0Me5Lfz1xj6x
+        +b/P6NQh/6xQ0zBB1LUkxDWNUZHeG8nEh3Xey1wZuf2XfLLKyvoH23YhzgFckgAAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

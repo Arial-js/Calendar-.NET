@@ -29,10 +29,11 @@ namespace Calendar
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlDays));
             this.LblDays = new System.Windows.Forms.Label();
             this.LstBox = new System.Windows.Forms.ListBox();
-            this.TmrUCD = new System.Windows.Forms.Timer(this.components);
+            this.BtnCreate = new System.Windows.Forms.Button();
+            this.BtnListEvent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblDays
@@ -47,24 +48,46 @@ namespace Calendar
             // 
             // LstBox
             // 
-            this.LstBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.LstBox.BackColor = System.Drawing.Color.Gainsboro;
             this.LstBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LstBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LstBox.FormattingEnabled = true;
             this.LstBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LstBox.ItemHeight = 15;
-            this.LstBox.Location = new System.Drawing.Point(0, 28);
+            this.LstBox.Location = new System.Drawing.Point(3, 37);
             this.LstBox.Name = "LstBox";
             this.LstBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.LstBox.Size = new System.Drawing.Size(135, 60);
             this.LstBox.TabIndex = 2;
             this.LstBox.Click += new System.EventHandler(this.LstBox_Click);
             // 
+            // BtnCreate
+            // 
+            this.BtnCreate.Image = ((System.Drawing.Image)(resources.GetObject("BtnCreate.Image")));
+            this.BtnCreate.Location = new System.Drawing.Point(101, 3);
+            this.BtnCreate.Name = "BtnCreate";
+            this.BtnCreate.Size = new System.Drawing.Size(37, 32);
+            this.BtnCreate.TabIndex = 3;
+            this.BtnCreate.UseVisualStyleBackColor = true;
+            this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
+            // 
+            // BtnListEvent
+            // 
+            this.BtnListEvent.Image = ((System.Drawing.Image)(resources.GetObject("BtnListEvent.Image")));
+            this.BtnListEvent.Location = new System.Drawing.Point(58, 3);
+            this.BtnListEvent.Name = "BtnListEvent";
+            this.BtnListEvent.Size = new System.Drawing.Size(37, 32);
+            this.BtnListEvent.TabIndex = 4;
+            this.BtnListEvent.UseVisualStyleBackColor = true;
+            this.BtnListEvent.Click += new System.EventHandler(this.BtnListEvent_Click);
+            // 
             // UserControlDays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.BtnListEvent);
+            this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.LstBox);
             this.Controls.Add(this.LblDays);
             this.Name = "UserControlDays";
@@ -80,6 +103,7 @@ namespace Calendar
 
         private System.Windows.Forms.Label LblDays;
         private System.Windows.Forms.ListBox LstBox;
-        private System.Windows.Forms.Timer TmrUCD;
+        private System.Windows.Forms.Button BtnCreate;
+        private System.Windows.Forms.Button BtnListEvent;
     }
 }
