@@ -48,18 +48,17 @@ namespace Calendar
             // 
             // LstBox
             // 
-            this.LstBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.LstBox.BackColor = System.Drawing.Color.SkyBlue;
             this.LstBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LstBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LstBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LstBox.FormattingEnabled = true;
             this.LstBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LstBox.ItemHeight = 15;
+            this.LstBox.ItemHeight = 17;
             this.LstBox.Location = new System.Drawing.Point(3, 37);
             this.LstBox.Name = "LstBox";
             this.LstBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.LstBox.Size = new System.Drawing.Size(135, 60);
+            this.LstBox.Size = new System.Drawing.Size(135, 51);
             this.LstBox.TabIndex = 2;
-            this.LstBox.Click += new System.EventHandler(this.LstBox_Click);
             // 
             // BtnCreate
             // 
@@ -85,15 +84,14 @@ namespace Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.Controls.Add(this.BtnListEvent);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.LstBox);
             this.Controls.Add(this.LblDays);
             this.Name = "UserControlDays";
-            this.Size = new System.Drawing.Size(138, 100);
+            this.Size = new System.Drawing.Size(141, 100);
             this.Load += new System.EventHandler(this.UserControlDays_Load);
-            this.Click += new System.EventHandler(this.UserControlDays_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

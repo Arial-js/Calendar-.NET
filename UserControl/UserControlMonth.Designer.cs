@@ -36,7 +36,7 @@ namespace Calendar
             // 
             // LblMonth
             // 
-            this.LblMonth.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMonth.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMonth.Location = new System.Drawing.Point(3, 26);
             this.LblMonth.Name = "LblMonth";
             this.LblMonth.Size = new System.Drawing.Size(182, 31);
@@ -69,10 +69,12 @@ namespace Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Controls.Add(this.LblYear);
             this.Controls.Add(this.LblMonthNumber);
             this.Controls.Add(this.LblMonth);
+            this.DoubleBuffered = true;
             this.Name = "UserControlMonth";
             this.Size = new System.Drawing.Size(188, 86);
             this.Click += new System.EventHandler(this.UserControlMonth_Click);

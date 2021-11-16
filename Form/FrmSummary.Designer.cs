@@ -38,14 +38,17 @@ namespace Calendar
             // 
             // LblYear
             // 
-            this.LblYear.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.LblYear.BackColor = System.Drawing.Color.Transparent;
             this.LblYear.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblYear.Location = new System.Drawing.Point(284, 9);
+            this.LblYear.ForeColor = System.Drawing.Color.Crimson;
+            this.LblYear.Image = ((System.Drawing.Image)(resources.GetObject("LblYear.Image")));
+            this.LblYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblYear.Location = new System.Drawing.Point(348, 9);
             this.LblYear.Name = "LblYear";
-            this.LblYear.Size = new System.Drawing.Size(227, 27);
+            this.LblYear.Size = new System.Drawing.Size(94, 27);
             this.LblYear.TabIndex = 11;
             this.LblYear.Text = "Anno";
-            this.LblYear.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LblYear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FlMonthContainer
             // 
@@ -78,7 +81,7 @@ namespace Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.BtnNext);
             this.Controls.Add(this.BtnPrevious);

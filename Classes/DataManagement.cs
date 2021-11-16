@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Runtime.InteropServices;
 
 namespace Calendar.Utility
 {
@@ -14,7 +15,7 @@ namespace Calendar.Utility
         {
             GlobalInfo.SQLiteConnection = new SQLiteConnection("Data Source=Calendar_Database;Version=3;");
             GlobalInfo.SQLiteConnection.Open();
-            string tableSql = "create table if not exists Events(Name text NOT NULL,Start real(1,24) NOT NULL,End real(1,24) NOT NULL ,Date text NOT NULL ,Iterable integer(0, 1));";
+            string tableSql = "create table if not exists Events(id integer PRIMARY KEY AUTOINCREMENT, Name text NOT NULL,Start real(1, 24) NOT NULL,End real(1, 24) NOT NULL ,Date text NOT NULL ,Iterable integer(0, 1));";
             SQLiteCommand command = new SQLiteCommand(tableSql, GlobalInfo.SQLiteConnection);
             command.ExecuteNonQuery();
         }
@@ -38,7 +39,7 @@ namespace Calendar.Utility
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = GlobalInfo.SQLiteConnection;
             command.CommandType = System.Data.CommandType.Text;
-            string insertSql = string.Format("insert into Events values ('{0}', '{1}', '{2}', '{3}', '{4}')", name, start, end, date, iterable);
+            string insertSql = string.Format("INSERT into Events(Name, Start, End, Date, Iterable) values ('{0}', '{1}', '{2}', '{3}', '{4}')", name, start, end, date, iterable);
             command.CommandText = insertSql;
             command.ExecuteNonQuery();
         }
@@ -50,7 +51,7 @@ namespace Calendar.Utility
         public List<string> ShowEvent(string date) 
         {
             List<string> events = new List<string>();
-            string sql = "select Name,Start,End,Iterable from Events where Date=@date";
+            string sql = "SELECT Name,Start,End,Iterable FROM Events WHERE Date=@date";
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = GlobalInfo.SQLiteConnection;
             command.CommandType = System.Data.CommandType.Text;
@@ -86,7 +87,7 @@ namespace Calendar.Utility
         public List<Event> ShowListEvents(string date)
         {
             List<Event> events = new List<Event>();
-            string sql = "Select * from Events Where Date=@date";
+            string sql = "SELECT * FROM Events WHERE Date=@date";
             SQLiteCommand command = new SQLiteCommand();
             command.Connection = GlobalInfo.SQLiteConnection;
             command.CommandType = System.Data.CommandType.Text;
@@ -104,6 +105,7 @@ namespace Calendar.Utility
                 while (reader.Read())
                 {
                     Event event1 = new Event();
+                    event1.id = int.Parse(reader["id"].ToString());
                     event1.Name = reader["Name"].ToString();
                     event1.Start = float.Parse(reader["Start"].ToString());
                     event1.End = float.Parse(reader["End"].ToString());
@@ -116,5 +118,167 @@ namespace Calendar.Utility
             return events;
         }
 
+        /* This method UPDATE * but id from Events when id is a param
+        * @Param {int id}
+        * @Param {float start}
+        * @Param {float end}
+        * @Param {string date}
+        * @Param {int iterable}
+        * @Return VOID
+        */
+        public void UpdateEvent(int id, string name, float start, float end, string date, int iterable)
+        {
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = GlobalInfo.SQLiteConnection;
+            command.CommandType = System.Data.CommandType.Text;
+            string sqlUpdate = "UPDATE Events SET Name=@name, Start=@start, End=@end, Date=@date, Iterable=@iterable WHERE id=@id";
+            command.CommandText = sqlUpdate;
+
+            SQLiteParameter param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.Int32;
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            command.Parameters.Add(param);
+
+            param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.String;
+            param.ParameterName = "@name";
+            param.Value = name;
+
+            command.Parameters.Add(param);
+
+
+            param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.Double;
+            param.ParameterName = "@start";
+            param.Value = start;
+
+            command.Parameters.Add(param);
+
+
+            param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.Double;
+            param.ParameterName = "@end";
+            param.Value = end;
+
+            command.Parameters.Add(param);
+
+            param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.String;
+            param.ParameterName = "@date";
+            param.Value = date;
+
+            command.Parameters.Add(param);
+
+            param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.Int32;
+            param.ParameterName = "@iterable";
+            param.Value = iterable;
+
+            command.Parameters.Add(param);
+
+        }
+
+        /* This method UPDATE Name from Events when name is a param
+         * @Param {string name}
+         * @Return VOID
+         */
+        public void UpdateEventName(string name)
+        {
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = GlobalInfo.SQLiteConnection;
+            command.CommandType = System.Data.CommandType.Text;
+            string sqlUpdate = "UPDATE Events SET Name=@name";
+            command.CommandText = sqlUpdate;
+
+            SQLiteParameter param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.String;
+            param.ParameterName = "@name";
+            param.Value = name;
+
+            command.Parameters.Add(param);
+        }
+
+        /* This method UPDATE Start from Events when name is a param
+        * @Param {int start}
+        * @Return VOID
+        */
+        public void UpdateEventStart(int start)
+        {
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = GlobalInfo.SQLiteConnection;
+            command.CommandType = System.Data.CommandType.Text;
+            string sqlUpdate = "UPDATE Events SET Start=@start";
+            command.CommandText = sqlUpdate;
+
+            SQLiteParameter param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.Int32;
+            param.ParameterName = "@start";
+            param.Value = start;
+
+            command.Parameters.Add(param);
+        }
+
+        /* This method UPDATE End from Events when end is a param
+        * @Param {int end}
+        * @Return VOID
+        */
+        public void UpdateEventEnd(int end)
+        {
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = GlobalInfo.SQLiteConnection;
+            command.CommandType = System.Data.CommandType.Text;
+            string sqlUpdate = "UPDATE Events SET End=@end";
+            command.CommandText = sqlUpdate;
+
+            SQLiteParameter param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.Int32;
+            param.ParameterName = "@end";
+            param.Value = end;
+
+            command.Parameters.Add(param);
+        }
+
+        /* This method UPDATE Iterable from Events when iterable is a param
+        * @Param {int iterable}
+        * @Return VOID
+        */
+        public void UpdateEventIterable(int iterable)
+        {
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = GlobalInfo.SQLiteConnection;
+            command.CommandType = System.Data.CommandType.Text;
+            string sqlUpdate = "UPDATE Events SET Iterable=@iterable";
+            command.CommandText = sqlUpdate;
+
+            SQLiteParameter param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.Int32;
+            param.ParameterName = "@iterable";
+            param.Value = iterable;
+
+            command.Parameters.Add(param);
+        }
+
+        /* This method DELETE From Events when id is a param
+         * @Param {int id}
+         * return VOID
+         */
+        public void DeleteEvent(int id)
+        {
+            SQLiteCommand command = new SQLiteCommand();
+            command.Connection = GlobalInfo.SQLiteConnection;
+            command.CommandType = System.Data.CommandType.Text;
+            string sqlDelete = "DELETE FROM Events WHERE id=@id";
+            command.CommandText = sqlDelete;
+
+            SQLiteParameter param = new SQLiteParameter();
+            param.DbType = System.Data.DbType.Int32;
+            param.ParameterName = "@id";
+            param.Value = id;
+
+            command.Parameters.Add(param);
+            command.ExecuteNonQuery();
+        }
     }
 }

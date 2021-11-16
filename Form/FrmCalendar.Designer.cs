@@ -46,15 +46,15 @@ namespace Calendar
             // FlDayContainer
             // 
             this.FlDayContainer.AutoScroll = true;
-            this.FlDayContainer.BackColor = System.Drawing.Color.Transparent;
-            this.FlDayContainer.Location = new System.Drawing.Point(12, 95);
+            this.FlDayContainer.BackColor = System.Drawing.Color.LightSlateGray;
+            this.FlDayContainer.Location = new System.Drawing.Point(4, 95);
             this.FlDayContainer.Name = "FlDayContainer";
-            this.FlDayContainer.Size = new System.Drawing.Size(1012, 554);
+            this.FlDayContainer.Size = new System.Drawing.Size(1031, 554);
             this.FlDayContainer.TabIndex = 0;
             // 
             // BtnPrevious
             // 
-            this.BtnPrevious.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnPrevious.BackColor = System.Drawing.Color.OrangeRed;
             this.BtnPrevious.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrevious.Image")));
             this.BtnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -69,7 +69,7 @@ namespace Calendar
             // 
             // BtnNext
             // 
-            this.BtnNext.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BtnNext.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.BtnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnNext.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNext.Image = ((System.Drawing.Image)(resources.GetObject("BtnNext.Image")));
@@ -166,20 +166,20 @@ namespace Calendar
             this.LblMonthYear.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMonthYear.ForeColor = System.Drawing.Color.Crimson;
             this.LblMonthYear.Image = ((System.Drawing.Image)(resources.GetObject("LblMonthYear.Image")));
-            this.LblMonthYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LblMonthYear.Location = new System.Drawing.Point(0, -1);
+            this.LblMonthYear.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LblMonthYear.Location = new System.Drawing.Point(0, 0);
             this.LblMonthYear.Name = "LblMonthYear";
-            this.LblMonthYear.Size = new System.Drawing.Size(1034, 35);
+            this.LblMonthYear.Size = new System.Drawing.Size(1035, 43);
             this.LblMonthYear.TabIndex = 10;
             this.LblMonthYear.Text = "Mese Anno";
-            this.LblMonthYear.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LblMonthYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LblMonthYear.Click += new System.EventHandler(this.LblMonthYear_Click);
             // 
             // FrmCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(1036, 716);
             this.Controls.Add(this.LblMonthYear);
             this.Controls.Add(this.LblSunday);
@@ -192,7 +192,7 @@ namespace Calendar
             this.Controls.Add(this.BtnNext);
             this.Controls.Add(this.BtnPrevious);
             this.Controls.Add(this.FlDayContainer);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MaximizeBox = false;

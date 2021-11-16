@@ -40,44 +40,58 @@ namespace Calendar
             // LblTitle
             // 
             this.LblTitle.AutoSize = true;
-            this.LblTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitle.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitle.ForeColor = System.Drawing.Color.Crimson;
             this.LblTitle.Location = new System.Drawing.Point(233, 9);
             this.LblTitle.Name = "LblTitle";
-            this.LblTitle.Size = new System.Drawing.Size(149, 24);
+            this.LblTitle.Size = new System.Drawing.Size(171, 29);
             this.LblTitle.TabIndex = 0;
             this.LblTitle.Text = "Elenco Eventi";
             // 
             // DgListEvents
             // 
+            this.DgListEvents.AllowUserToAddRows = false;
+            this.DgListEvents.AllowUserToDeleteRows = false;
+            this.DgListEvents.BackgroundColor = System.Drawing.Color.LightSlateGray;
             this.DgListEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgListEvents.Location = new System.Drawing.Point(42, 97);
+            this.DgListEvents.Location = new System.Drawing.Point(0, 97);
             this.DgListEvents.Name = "DgListEvents";
-            this.DgListEvents.Size = new System.Drawing.Size(535, 284);
+            this.DgListEvents.ReadOnly = true;
+            this.DgListEvents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DgListEvents.Size = new System.Drawing.Size(621, 284);
             this.DgListEvents.TabIndex = 1;
+            this.DgListEvents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListEvents_CellClick);
+            this.DgListEvents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListEvents_CellValueChanged);
+            this.DgListEvents.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgListEvents_RowHeaderMouseClick);
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(421, 387);
+            this.BtnUpdate.BackColor = System.Drawing.SystemColors.Window;
+            this.BtnUpdate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdate.Location = new System.Drawing.Point(454, 387);
             this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.BtnUpdate.Size = new System.Drawing.Size(75, 33);
             this.BtnUpdate.TabIndex = 2;
             this.BtnUpdate.Text = "Modifica";
-            this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.UseVisualStyleBackColor = false;
             // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(502, 387);
+            this.BtnDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnDelete.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDelete.Location = new System.Drawing.Point(535, 386);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(75, 23);
+            this.BtnDelete.Size = new System.Drawing.Size(75, 33);
             this.BtnDelete.TabIndex = 3;
             this.BtnDelete.Text = "Elimina";
-            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // FrmListEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(622, 485);
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.BtnUpdate);
