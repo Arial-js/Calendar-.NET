@@ -65,7 +65,9 @@ namespace Calendar
             }
         }
 
-        // This method allows you to get id from the datagridview when you click on cell
+        /* This method allows you to get id from the datagridview when you click on cell
+         * Check https://www.c-sharpcorner.com/UploadFile/1e050f/insert-update-and-delete-record-in-datagridview-C-Sharp/
+         */
         private void DgListEvents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
