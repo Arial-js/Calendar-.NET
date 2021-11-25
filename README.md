@@ -1,6 +1,6 @@
 # Introduction
 Calendar is a .NET C# windows form application. It's a simple calendar that have a **SQlite database** so all your data will be stored locally in your project's folder. -->
-please see Important section below
+please see 'Incoming Change' section below
 
 ## PROJECT STRUCTURE
  
