@@ -10,5 +10,9 @@ namespace Calendar.Utility
     public static class GlobalInfo
     {
         public static SQLiteConnection SQLiteConnection;
+
+        public static FrmCalendar FrmCalendar;
+        // I save the instance of FrmSummary because i will need it on UserControlMonth
+        public static FrmSummary frmSummary;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Calendar.Utility;
 
 namespace Calendar
 {
@@ -41,13 +42,17 @@ namespace Calendar
         private void UserControlMonth_Click(object sender, EventArgs e)
         {
             FrmCalendar frmCalendar = new FrmCalendar();
+            frmCalendar.firstTime = false; // so the load will be once
             frmCalendar.DisplayDays(int.Parse(LblMonthNumber.Text), int.Parse(LblYear.Text));
+            GlobalInfo.frmSummary.Close();
         }
         // this method -click will send you on calendar on the month that you clicked
         private void LblMonth_Click(object sender, EventArgs e)
         {
             FrmCalendar frmCalendar = new FrmCalendar();
+            frmCalendar.firstTime = false;
             frmCalendar.DisplayDays(int.Parse(LblMonthNumber.Text), int.Parse(LblYear.Text));
+            GlobalInfo.frmSummary.Close();
         }
     }
 }

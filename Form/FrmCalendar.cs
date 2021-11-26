@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Calendar.Utility;
 
 namespace Calendar
 {
     public partial class FrmCalendar : Form
     {
         private int month, year;
+        public bool firstTime = true; //first time load?
 
         public static int static_month, static_year; // they are your month and year getters/setters
         public FrmCalendar()
@@ -23,7 +25,11 @@ namespace Calendar
 
         private void FrmCalendar_Load(object sender, EventArgs e)
         {
-            DisplayDays(month, year);
+            if (firstTime)
+            {
+                DisplayDays(month, year);
+                firstTime = false;
+            }
         }
 
         /* This is the method public that allows to show calendar on current month and year
@@ -149,9 +155,12 @@ namespace Calendar
         private void LblMonthYear_Click(object sender, EventArgs e)
         {
             FrmSummary frmSummary = new FrmSummary();
-            this.Hide();
+            GlobalInfo.frmSummary = frmSummary; // i save the instance of frmSummary in Globalinfo
+            //frmSummary.IsMdiContainer = true;
+            GlobalInfo.FrmCalendar = this;
+            this.Hide(); //only hide because otherwise the app will close later
             frmSummary.ShowDialog();
-            this.Close();
+            //this.Close();
         }
     }
 }
