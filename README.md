@@ -1,6 +1,7 @@
 # Introduction
-Calendar is a .NET C# windows form application. It's a simple calendar that have a **SQlite database** so all your data will be stored locally in your project's folder. -->
-please see 'Incoming Change' section below
+Calendar is a .NET C# windows form application. It's a simple calendar that have a **SQlite database** so all your data will be stored locally in your project's folder.
+***please see 'Release Change' section below.***
+I used a windows form application and a sqlite database because the application want to work offline and all the data want to remain in the owner computer.
 
 ## PROJECT STRUCTURE
  
@@ -14,11 +15,12 @@ please see 'Incoming Change' section below
 
 ## Important
 - When you load the project on visual studio it's possible that it will show this error: 
-'Couldn't process file resx due to its being in the Internet or Restricted zone or having the mark of the web on the file'
+<em>'Couldn't process file resx due to its being in the Internet or Restricted zone or having the mark of the web on the file' </em>
 - Fix Here: [StackOverflow](https://stackoverflow.com/questions/51348919/couldnt-process-file-resx-due-to-its-being-in-the-internet-or-restricted-zone-o)
 
-### Incoming Change
+## Release Change
 - I will change the connection string from folder project to point to a shared folder so the data will also be accessible from another pc in the lan
+- I'm going to to that in the first release patch because for development purpose I need the db in the folder bin/debug
 
 ### Authors details
 
