@@ -1,7 +1,7 @@
 # Introduction
-Calendar is a .NET C# windows form application. It's a simple calendar that have a **SQlite database** so all your data will be stored locally in your project's folder.
+- Calendar is a .NET C# windows form application. It's a simple calendar that have a **SQlite database** so all your data will be stored locally in your project's folder
 ***please see 'Release Change' section below.***
-I used a windows form application and a sqlite database because the application want to work offline and all the data want to remain in the owner computer.
+- I used a windows form application and a sqlite database because the application want to work offline and all the data want to remain in the owner computer.
 
 ## PROJECT STRUCTURE
  
@@ -20,7 +20,7 @@ I used a windows form application and a sqlite database because the application 
 
 ## Release Change
 - I will change the connection string from folder project to point to a shared folder so the data will also be accessible from another pc in the lan
-- I'm going to to that in the first release patch because for development purpose I need the db in the folder bin/debug
+- I'm going to do that in the first release patch because for development purpose I need the db in the folder bin/debug
 
 ### Authors details
 
