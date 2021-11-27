@@ -25,10 +25,10 @@
 ### Pre-Release
 - Check Release Section for the 0.1-alpha version
 
-### Authors details
+## Authors details
 
 - Andrea Cera email: **ndrcera@gmail.com** phone: 3495633130 
 
-#### Changelogs
+### Changelogs
 
 You can find the history of the project and update here: [GitHub](https://github.com/Arial-js/Calendar-.NET)
