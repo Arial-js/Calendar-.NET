@@ -22,6 +22,9 @@
 - I will change the connection string from folder project to point to a shared folder so the data will also be accessible from another pc in the lan
 - I'm going to do that in the first release patch because for development purpose I need the db in the folder bin/debug
 
+### Pre-Release
+- Check Release Section for the 0.1-alpha version
+
 ### Authors details
 
 - Andrea Cera email: **ndrcera@gmail.com** phone: 3495633130 
