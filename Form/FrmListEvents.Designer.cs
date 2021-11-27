@@ -56,12 +56,11 @@ namespace Calendar
             this.DgListEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgListEvents.Location = new System.Drawing.Point(0, 97);
             this.DgListEvents.Name = "DgListEvents";
-            this.DgListEvents.ReadOnly = true;
             this.DgListEvents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgListEvents.Size = new System.Drawing.Size(621, 284);
             this.DgListEvents.TabIndex = 1;
             this.DgListEvents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListEvents_CellClick);
-            this.DgListEvents.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListEvents_CellValueChanged);
+            this.DgListEvents.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgListEvents_CellEndEdit);
             this.DgListEvents.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgListEvents_RowHeaderMouseClick);
             // 
             // BtnUpdate

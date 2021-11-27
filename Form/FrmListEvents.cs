@@ -13,6 +13,12 @@ namespace Calendar
 {
     public partial class FrmListEvents : Form
     {
+        private int ID; // ID needed when you delete a record
+        private string name;
+        private double start;
+        private double end;
+        private int iterable;
+
         public FrmListEvents()
         {
             InitializeComponent();
@@ -40,27 +46,21 @@ namespace Calendar
 
         }
 
-        /* https://www.c-sharpcorner.com/UploadFile/1e050f/insert-update-and-delete-record-in-datagridview-C-Sharp/
-         * https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.datagridview.selectionchanged?view=windowsdesktop-5.0
-         */
-        private void DgListEvents_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            DataManagement dataManagement = new DataManagement();
-            dataManagement.OpenConnection();
-            //DgListEvents.Rows[e.RowIndex].SetValues(dataManagement.UpdateEventName());
-        }
-
-        private int ID; // ID needed when you delete a record
-
         // This method allows you to get id from the datagridview when you click on the row
         private void DgListEvents_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
                 ID = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[0].Value.ToString());
+                name = DgListEvents.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //date = DgListEvents.Rows[e.RowIndex].Cells[2].Value.ToString();
+                start = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[3].Value.ToString());
+                end = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[4].Value.ToString());
+                iterable = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[5].Value.ToString());
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.Message);
             }
         }
@@ -72,11 +72,42 @@ namespace Calendar
         {
             try
             {
+                DgListEvents.Rows[e.RowIndex].Cells[2].ReadOnly = true;
                 ID = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[0].Value.ToString());
+                name = DgListEvents.Rows[e.RowIndex].Cells[1].Value.ToString();
+                start = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[3].Value.ToString());
+                end = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[4].Value.ToString());
+                iterable = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[5].Value.ToString());
             }
             catch (Exception ex)
             {
+                //MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        // This method UPDATE the cell after you edit it, you can edit all cells but date and ofc id
+        // https://www.codegrepper.com/code-examples/whatever/get+cell+value+on+cellvaluechanged+c%23+datagridview
+        private void DgListEvents_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataManagement dataManagement = new DataManagement();
+                dataManagement.OpenConnection();
+                ID = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[0].Value.ToString());
+                name = DgListEvents.Rows[e.RowIndex].Cells[1].Value.ToString();
+                start = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[3].Value.ToString());
+                end = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[4].Value.ToString());
+                iterable = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[5].Value.ToString());
+                dataManagement.UpdateEvent(ID, name, start, end, iterable);
+                dataManagement.ShowListEvents(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+
+
+                dataManagement.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore: " + ex.Message);
             }
         }
 
