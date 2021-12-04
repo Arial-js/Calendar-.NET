@@ -27,7 +27,7 @@
 
 ## Authors details
 
-- Andrea Cera email: **ndrcera@gmail.com** phone: 3495633130 
+- Andrea Cera email: **ndrcera@gmail.com**
 
 ### Changelogs
 
