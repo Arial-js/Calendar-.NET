@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Calendar.Utility;
+using Calendar.Classes;
 
 namespace Calendar
 {
@@ -39,20 +40,34 @@ namespace Calendar
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            static_day = LblDays.Text;
-            FrmCreateEvent frmCreateEvent = new FrmCreateEvent();
-            frmCreateEvent.ShowDialog();
-            DataManagement dataManagement = new DataManagement();
-            dataManagement.OpenConnection();
-            LstBox.DataSource = dataManagement.ShowEvent(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
-            dataManagement.CloseConnection();
+            try
+            {
+                static_day = LblDays.Text;
+                FrmCreateEvent frmCreateEvent = new FrmCreateEvent();
+                frmCreateEvent.ShowDialog();
+                DataManagement dataManagement = new DataManagement();
+                dataManagement.OpenConnection();
+                LstBox.DataSource = dataManagement.ShowEvent(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+                dataManagement.CloseConnection();
+            } 
+            catch(Exception ex)
+            {
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
+            }
         }
 
         private void BtnListEvent_Click(object sender, EventArgs e)
         {
-            static_day = LblDays.Text;
-            FrmListEvents frmListEvents = new FrmListEvents();           
-            frmListEvents.ShowDialog();
+            try
+            {
+                static_day = LblDays.Text;
+                FrmListEvents frmListEvents = new FrmListEvents();
+                frmListEvents.ShowDialog();
+            } 
+            catch (Exception ex)
+            {
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
+            }
         }
     }
 }

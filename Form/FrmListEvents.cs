@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Calendar.Utility;
+using Calendar.Classes;
 
 namespace Calendar
 {
@@ -42,6 +43,7 @@ namespace Calendar
             } catch(Exception ex)
             {
                 MessageBox.Show("Problema: " + ex.Message);
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
             }
 
         }
@@ -62,6 +64,7 @@ namespace Calendar
             {
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.Message);
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
             }
         }
 
@@ -73,16 +76,17 @@ namespace Calendar
             try
             {
                 DgListEvents.Rows[e.RowIndex].Cells[2].ReadOnly = true;
+                DgListEvents.Rows[e.RowIndex].Cells[5].ReadOnly = true;
                 ID = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[0].Value.ToString());
                 name = DgListEvents.Rows[e.RowIndex].Cells[1].Value.ToString();
                 start = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[3].Value.ToString());
                 end = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[4].Value.ToString());
-                iterable = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[5].Value.ToString());
             }
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.Message);
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
             }
         }
 
@@ -105,9 +109,15 @@ namespace Calendar
 
                 dataManagement.CloseConnection();
             }
+            catch(FormatException ex)
+            {
+                MessageBox.Show("Errore: Formato non supportato!");
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Errore: " + ex.Message);
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
             }
         }
 
@@ -125,6 +135,7 @@ namespace Calendar
             } catch(Exception ex)
             {
                 MessageBox.Show("Problema: " + ex.Message);
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
             }
         }
     }

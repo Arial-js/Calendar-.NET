@@ -15,7 +15,7 @@ namespace Calendar.Utility
         {
             GlobalInfo.SQLiteConnection = new SQLiteConnection("Data Source=Calendar_Database;Version=3;");
             GlobalInfo.SQLiteConnection.Open();
-            string tableSql = "create table if not exists Events(id integer PRIMARY KEY AUTOINCREMENT, Name text NOT NULL,Start real(1, 24) NOT NULL,End real(1, 24) NOT NULL ,Date text NOT NULL ,Iterable integer(0, 1));";
+            string tableSql = "create table if not exists Events(id integer PRIMARY KEY AUTOINCREMENT, Name text NOT NULL,Start real NOT NULL,End real NOT NULL ,Date text NOT NULL ,Iterable integer(0, 1));";
             SQLiteCommand command = new SQLiteCommand(tableSql, GlobalInfo.SQLiteConnection);
             command.ExecuteNonQuery();
         }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using Calendar.Utility;
+using Calendar.Classes;
 
 namespace Calendar
 {
@@ -33,6 +34,10 @@ namespace Calendar
                 if (string.IsNullOrEmpty(TxtEvent.Text) | string.IsNullOrEmpty(TxtStart.Text) | string.IsNullOrEmpty(TxtEnd.Text))
                 {
                     MessageBox.Show("Compila tutti i campi!");
+                }
+                if (double.Parse(TxtStart.Text) > 24 || double.Parse(TxtStart.Text) < 0 || double.Parse(TxtEnd.Text) > 24 || double.Parse(TxtEnd.Text) < 0)
+                {
+                    MessageBox.Show("Inserisci degli orari corretti da 0 a 24");
                 }
                 else if(!ChkBoxIterable.Checked)
                 {
@@ -62,13 +67,15 @@ namespace Calendar
                     dataManagement.CloseConnection();
                     this.Close();
                 }
-            } catch(FormatException)
+            } catch(FormatException ex)
             {
-                MessageBox.Show("Errore: Inizio e Fine supportano il formato numerico: (1-23)");
-
-            } catch(Exception ex)
+                MessageBox.Show("Errore: Dati inseriti non validi!");
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                LogFile.WriteLog(ex.Message + " " + DateTime.Now);
             }
         }
     }

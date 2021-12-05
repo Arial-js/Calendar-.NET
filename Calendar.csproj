@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Event.cs" />
+    <Compile Include="Classes\LogFile.cs" />
     <Compile Include="Form\FrmCreateEvent.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -164,36 +164,3 @@ namespace Calendar
         }
     }
 }
-
-
-// this funcion display the calendar's days and month.
-/*private void DisplayDays()
-{
-    DateTime now = DateTime.Now;
-    month = now.Month;
-    year = now.Year;
-    // name of the month and year
-    String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-    LblMonthYear.Text = monthName + " " + year;
-
-    static_month = month; // here you set the static month to the actual month
-    static_year = year;   // here you set the static year to the actual year
-
-    DateTime startOfMonth = new DateTime(year, month, 1);
-    int days = DateTime.DaysInMonth(year, month);
-    int daysOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
-
-    for(int i=1; i< daysOfTheWeek; ++i)
-    {
-        UserControlBlank userControlBlank = new UserControlBlank();
-        FlDayContainer.Controls.Add(userControlBlank);
-    }
-
-    for(int i = 1; i<= days; ++i)
-    {
-        UserControlDays userControlDays = new UserControlDays();
-        userControlDays.Days(i);
-        FlDayContainer.Controls.Add(userControlDays);
-    }
-
-}*/
