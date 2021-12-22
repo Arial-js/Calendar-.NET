@@ -54,7 +54,7 @@ namespace Calendar
             // 
             // BtnPrevious
             // 
-            this.BtnPrevious.BackColor = System.Drawing.Color.OrangeRed;
+            this.BtnPrevious.BackColor = System.Drawing.Color.White;
             this.BtnPrevious.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrevious.Image")));
             this.BtnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -69,7 +69,7 @@ namespace Calendar
             // 
             // BtnNext
             // 
-            this.BtnNext.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnNext.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BtnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnNext.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNext.Image = ((System.Drawing.Image)(resources.GetObject("BtnNext.Image")));
