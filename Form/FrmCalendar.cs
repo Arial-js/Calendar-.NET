@@ -15,9 +15,9 @@ namespace Calendar
     public partial class FrmCalendar : Form
     {
         private int month, year;
-        public bool firstTime = true; //first time load?
-
-        public static int static_month, static_year; // they are your month and year getters/setters
+        public bool FirstTimeLoad { get; set; } = true;
+        public static int Static_month { get; set; }
+        public static int Static_year { get; set; }
         public FrmCalendar()
         {
             InitializeComponent();
@@ -25,10 +25,10 @@ namespace Calendar
 
         private void FrmCalendar_Load(object sender, EventArgs e)
         {
-            if (firstTime)
+            if (FirstTimeLoad)
             {
                 DisplayDays(month, year);
-                firstTime = false;
+                FirstTimeLoad = false;
             }
         }
 
@@ -60,8 +60,8 @@ namespace Calendar
                 LblMonthYear.Text = monthName + " " + yearName;
             }
 
-            static_month = month;
-            static_year = year;
+            Static_month = month;
+            Static_year = year;
 
             DateTime startOfMonth = new DateTime(year, month, 1);
             int days = DateTime.DaysInMonth(year, month);
@@ -92,13 +92,12 @@ namespace Calendar
                 month = 12;
                 year--;
             }
-            static_month = month;
-            static_year = year;
+            Static_month = month;
+            Static_year = year;
             // name of the month and year
             String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LblMonthYear.Text = monthName + " " + year;
 
-            DateTime now = DateTime.Now;
             DateTime startOfMonth = new DateTime(year, month, 1);
             int days = DateTime.DaysInMonth(year, month);
             int daysOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
@@ -127,13 +126,12 @@ namespace Calendar
                 month = 1;
                 year++;
             }
-            static_month = month;
-            static_year = year;
+            Static_month = month;
+            Static_year = year;
             // name of the month and year
             String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LblMonthYear.Text = monthName + " " + year;
 
-            DateTime now = DateTime.Now;
             DateTime startOfMonth = new DateTime(year, month, 1);
             int days = DateTime.DaysInMonth(year, month);
             int daysOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
@@ -155,12 +153,10 @@ namespace Calendar
         private void LblMonthYear_Click(object sender, EventArgs e)
         {
             FrmSummary frmSummary = new FrmSummary();
-            GlobalInfo.frmSummary = frmSummary; // i save the instance of frmSummary in Globalinfo
-            //frmSummary.IsMdiContainer = true;
+            GlobalInfo.FrmSummary = frmSummary; // i save the instance of frmSummary in Globalinfo
             GlobalInfo.FrmCalendar = this;
-            this.Hide(); //only hide because otherwise the app will close later
+            Hide(); //only hide because otherwise the app will close later
             frmSummary.ShowDialog();
-            //this.Close();
         }
     }
 }

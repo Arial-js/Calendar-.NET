@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Calendar.Utility;
 
 namespace Calendar
 {
@@ -28,7 +19,7 @@ namespace Calendar
         // this method display the calendar in month-only mode
         private void DisplayMonth()
         {
-            year = FrmCalendar.static_year;
+            year = FrmCalendar.Static_year;
 
             LblYear.Text = year.ToString();
 

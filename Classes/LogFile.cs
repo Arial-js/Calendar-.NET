@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Calendar.Classes
 {
-    class LogFile
+    static class LogFile
     {
         public static bool WriteLog(string strMessage)
         {
             try
             {
-                FileStream fileStream = new FileStream(string.Format("{0}\\{1}", Environment.CurrentDirectory, "Calendar.log"), FileMode.Append, FileAccess.Write);
-                StreamWriter streamWriter = new StreamWriter(fileStream);
-                streamWriter.WriteLine(strMessage);
-                streamWriter.Close();
-                fileStream.Close();
+                using (FileStream fileStream = new FileStream(string.Format("{0}\\{1}", Environment.CurrentDirectory, "Calendar.log"), FileMode.Append, FileAccess.Write))
+                using(StreamWriter streamWriter = new StreamWriter(fileStream))
+                {                  
+                    streamWriter.WriteLine(strMessage);
+                }
                 return true;
             }
             catch (Exception)

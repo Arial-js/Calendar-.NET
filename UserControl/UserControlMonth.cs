@@ -41,18 +41,22 @@ namespace Calendar
         // this method -click will send you on calendar on the window-month that you clicked
         private void UserControlMonth_Click(object sender, EventArgs e)
         {
-            FrmCalendar frmCalendar = new FrmCalendar();
-            frmCalendar.firstTime = false; // so the load will be once
+            FrmCalendar frmCalendar = new FrmCalendar
+            {
+                FirstTimeLoad = false // so the load will be once
+            };
             frmCalendar.DisplayDays(int.Parse(LblMonthNumber.Text), int.Parse(LblYear.Text));
-            GlobalInfo.frmSummary.Close();
+            GlobalInfo.FrmSummary.Close();
         }
         // this method -click will send you on calendar on the month that you clicked
         private void LblMonth_Click(object sender, EventArgs e)
         {
-            FrmCalendar frmCalendar = new FrmCalendar();
-            frmCalendar.firstTime = false;
+            FrmCalendar frmCalendar = new FrmCalendar
+            {
+                FirstTimeLoad = false
+            };
             frmCalendar.DisplayDays(int.Parse(LblMonthNumber.Text), int.Parse(LblYear.Text));
-            GlobalInfo.frmSummary.Close();
+            GlobalInfo.FrmSummary.Close();
         }
     }
 }

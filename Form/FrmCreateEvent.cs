@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
 using Calendar.Utility;
 using Calendar.Classes;
 
@@ -23,7 +15,7 @@ namespace Calendar
         // in this load I set the TxtDate with the current date that you clicked
         private void FrmCreateEvent_Load(object sender, EventArgs e)
         {
-            TxtDate.Text = UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year;
+            TxtDate.Text = UserControlDays.Static_day + "/" + FrmCalendar.Static_month + "/" + FrmCalendar.Static_year;
         }
 
         // this method save the events in the date that you clicked and if he's iterable in the format d/m/yyyy
@@ -31,7 +23,7 @@ namespace Calendar
         {
             try
             {
-                if (string.IsNullOrEmpty(TxtEvent.Text) | string.IsNullOrEmpty(TxtStart.Text) | string.IsNullOrEmpty(TxtEnd.Text))
+                if (string.IsNullOrEmpty(TxtEvent.Text) || string.IsNullOrEmpty(TxtStart.Text) || string.IsNullOrEmpty(TxtEnd.Text))
                 {
                     MessageBox.Show("Compila tutti i campi!");
                 }
@@ -61,7 +53,7 @@ namespace Calendar
                     {
                         dataManagement.CreateEvent(TxtEvent.Text, float.Parse(TxtStart.Text), float.Parse(TxtEnd.Text), TxtDate.Text, check);
                         DateTime dateTime = new DateTime();
-                        TxtDate.Text = dateTime.AddDays(double.Parse(UserControlDays.static_day.ToString())-1).AddMonths(FrmCalendar.static_month - 1).AddYears(FrmCalendar.static_year ++).ToString("d/M/yyyy");
+                        TxtDate.Text = dateTime.AddDays(double.Parse(UserControlDays.Static_day.ToString())-1).AddMonths(FrmCalendar.Static_month - 1).AddYears(FrmCalendar.Static_year ++).ToString("d/M/yyyy");
                     }
                     MessageBox.Show("Nuovo Evento Creato!");
                     dataManagement.CloseConnection();

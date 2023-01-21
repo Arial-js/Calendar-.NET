@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Calendar.Utility;
 using Calendar.Classes;
@@ -14,7 +7,7 @@ namespace Calendar
 {
     public partial class UserControlDays : UserControl
     {
-        public static string static_day; // this is your get/set for the days remember static_day = LblDays.Text in all method
+        public static string Static_day { get; set; }
         public UserControlDays()
         {
             InitializeComponent(); 
@@ -31,10 +24,10 @@ namespace Calendar
 
         private void UserControlDays_Load(object sender, EventArgs e)
         {
-            static_day = LblDays.Text;
+            Static_day = LblDays.Text;
             DataManagement dataManagement = new DataManagement();
             dataManagement.OpenConnection();
-            LstBox.DataSource = dataManagement.ShowEvent(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+            LstBox.DataSource = dataManagement.ShowEvent(Static_day + "/" + FrmCalendar.Static_month + "/" + FrmCalendar.Static_year);
             dataManagement.CloseConnection();
         }
 
@@ -42,12 +35,12 @@ namespace Calendar
         {
             try
             {
-                static_day = LblDays.Text;
+                Static_day = LblDays.Text;
                 FrmCreateEvent frmCreateEvent = new FrmCreateEvent();
                 frmCreateEvent.ShowDialog();
                 DataManagement dataManagement = new DataManagement();
                 dataManagement.OpenConnection();
-                LstBox.DataSource = dataManagement.ShowEvent(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+                LstBox.DataSource = dataManagement.ShowEvent(Static_day + "/" + FrmCalendar.Static_month + "/" + FrmCalendar.Static_year);
                 dataManagement.CloseConnection();
             } 
             catch(Exception ex)
@@ -60,7 +53,7 @@ namespace Calendar
         {
             try
             {
-                static_day = LblDays.Text;
+                Static_day = LblDays.Text;
                 FrmListEvents frmListEvents = new FrmListEvents();
                 frmListEvents.ShowDialog();
             } 

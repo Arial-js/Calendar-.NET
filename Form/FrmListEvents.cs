@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Calendar.Utility;
 using Calendar.Classes;
@@ -31,7 +24,7 @@ namespace Calendar
             {
                 DataManagement dataManagement = new DataManagement();
                 dataManagement.OpenConnection();
-                DgListEvents.DataSource = dataManagement.ShowListEvents(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+                DgListEvents.DataSource = dataManagement.ShowListEvents(UserControlDays.Static_day + "/" + FrmCalendar.Static_month + "/" + FrmCalendar.Static_year);
                 DgListEvents.Columns[0].Visible = false;
                 DgListEvents.Columns[1].Width = 180;
                 DgListEvents.Columns[1].HeaderText = "Nome";
@@ -55,7 +48,6 @@ namespace Calendar
             {
                 ID = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[0].Value.ToString());
                 name = DgListEvents.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //date = DgListEvents.Rows[e.RowIndex].Cells[2].Value.ToString();
                 start = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[3].Value.ToString());
                 end = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[4].Value.ToString());
                 iterable = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[5].Value.ToString());
@@ -84,7 +76,6 @@ namespace Calendar
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.Message);
                 LogFile.WriteLog(ex.Message + " " + DateTime.Now);
             }
@@ -104,7 +95,7 @@ namespace Calendar
                 end = Convert.ToDouble(DgListEvents.Rows[e.RowIndex].Cells[4].Value.ToString());
                 iterable = Convert.ToInt32(DgListEvents.Rows[e.RowIndex].Cells[5].Value.ToString());
                 dataManagement.UpdateEvent(ID, name, start, end, iterable);
-                dataManagement.ShowListEvents(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+                dataManagement.ShowListEvents(UserControlDays.Static_day + "/" + FrmCalendar.Static_month + "/" + FrmCalendar.Static_year);
 
 
                 dataManagement.CloseConnection();
@@ -130,7 +121,7 @@ namespace Calendar
                 dataManagement.OpenConnection();
                 dataManagement.DeleteEvent(ID);
                 MessageBox.Show("Evento eliminato correttamente");
-                DgListEvents.DataSource = dataManagement.ShowListEvents(UserControlDays.static_day + "/" + FrmCalendar.static_month + "/" + FrmCalendar.static_year);
+                DgListEvents.DataSource = dataManagement.ShowListEvents(UserControlDays.Static_day + "/" + FrmCalendar.Static_month + "/" + FrmCalendar.Static_year);
                 dataManagement.CloseConnection();
             } catch(Exception ex)
             {
